@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
+<div style="border: 1px solid black; border-radius: 30px; padding: 30px; margin-bottom: 10px; text-align: center;">
     <h2>Готовые маршруты</h2>
     <p>На этой странице представлены готовые маршруты, одобренные нашими пользователями</p>
-    <input name="ready_route" type="submit" value="Готовые маршруты">
+    <a href="/search"><input name="ready_route" type="submit" value="Готовые маршруты"></a>
 </div>
-<div>
+<div style="border: 1px solid black; border-radius: 30px; padding: 30px; text-align: center;">
     <h2>Предложите свой собственный маршрут</h2>
     <p>Вы знаете хороший маршрут, которого нет у нас на сайте? Предложите его нам, мы рассмотрим и добавим его на наш
         сайт</p>
-    <input name="create_route" type="submit" value="Создать маршрут">
+    <a><input name="create_route" type="submit" value="Создать маршрут"></a>
 </div>
 {% endblock %}

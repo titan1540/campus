@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Готовые маршруты</h2>
+<input name="search_field" type="search" placeholder="Введите название маршрута">
+<input name="search_button" type="submit" value="Найти">
+<div>
+    <ul>
+        {% for tag in tags %}
+        <li><span>{{ tag }}</span></li>
+        {% endfor %}
+    </ul>
+    <input name="tags_search" type="submit" value="Выбрать теги">
+</div>
+<ul>
+    {% for route in routes %}
+    <li>
+        <div>
+            <img src="{{ route.img }}">
+            <h3>{{ route.name }}</h3>
+            <a href="/route{{ route.id }}"><input></a>
+
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

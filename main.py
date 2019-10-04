@@ -39,5 +39,17 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    routes = RouteModel.query.all()
+    tags = set()
+    for route_way in routes:
+        way_tags = route_way.tags.split(';')
+        for tag in way_tags:
+            tags.add(tag)
+    tags = list(tags)
+    return render_template('search.html', routes=routes, tags=tags)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)
